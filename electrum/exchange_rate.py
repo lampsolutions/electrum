@@ -243,6 +243,10 @@ class Bylls(ExchangeBase):
         json = await self.get_json('bylls.com', '/api/price?from_currency=BTC&to_currency=CAD')
         return {'CAD': Decimal(json['public_price']['to_price'])}
 
+class CoinMarketCap(ExchangeBase):
+    async def get_rates(self, ccy):
+        json = await self.get_json('api.coinmarketcap.com', '/v1/ticker/bitcore/?convert=' + ccy)
+        return {ccy: Decimal(json[0]["price_" + ccy.lower()])}
 
 class Coinbase(ExchangeBase):
 
