@@ -14,7 +14,7 @@ from .logging import get_logger
 
 
 _logger = get_logger(__name__)
-BIP32_PRIME = 0x800000a0
+BIP32_PRIME = 0x80000000
 UINT32_MAX = (1 << 32) - 1
 
 
