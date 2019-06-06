@@ -35,7 +35,7 @@ def rpc(method, params):
     port = 4561
     if len(sys.argv) > 3:
         port = sys.argv[3]
-    url = "http://coinbase01.lamp-solutions.de:{}/".format(port)
+    url = "http://localhost:{}/".format(port)
     req = urllib2.Request(url, data_json, {'content-type': 'application/json'})
 
     base64string = base64.encodestring('%s:%s' % (username, password)).replace('\n', '')
